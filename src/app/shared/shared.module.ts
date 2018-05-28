@@ -6,23 +6,20 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatCardModule, MatInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [],
   imports: [
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatCardModule
+    HttpClientModule
   ],
   exports: [
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [HttpService]
 })
