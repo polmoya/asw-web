@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import {NavbarModule} from './navbar/navbar.module';
+import {SubmitModule} from './submit/submit.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {NavbarModule} from './navbar/navbar.module';
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    NavbarModule
+    NavbarModule,
+    SubmitModule
   ],
   providers: [],
   bootstrap: [AppComponent]
