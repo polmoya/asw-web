@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 import {SubmitComponent} from './submit/submit.component';
-import {ContributionsListComponent} from './contributions_list/contributions_list.component';
+import {ContributionsListComponent} from './contribution/news.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},

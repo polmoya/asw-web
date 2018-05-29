@@ -1,15 +1,20 @@
-<div>
-  <i class="material-icons">thumb_up_alt</i>
-  <h2> {{contribution.title}} </h2>
-</div>
-<span> {{contribution.url}} </span>
-<span> {{contribution.text}} </span>
-<div>
-  <span> {{contribution.n_votes}} votes </span>
-  by
-  <span> {{contribution.user}} </span>
-  |
-  <span> {{contribution.time}} </span>
-  |
-  <span> {{contribution.n_comments}} comments </span>
-</div>
+<mat-card>
+  <mat-card-title>
+    <i class="material-icons">thumb_up_alt</i>
+    <a routerLink="/contribution/{{contribution.id}}">
+      <span> {{contribution.title}} </span>
+    </a>
+  </mat-card-title>
+  <mat-card-content>
+    <a href="{{contribution.url}}"> {{contribution.url}} </a>
+    <br>
+    <span> {{contribution.text}} </span>
+    <span> {{contribution.n_votes}} votes </span>
+    by
+    <span> {{contribution.user}} </span>
+    |
+    <span> {{contribution.time}} </span>
+    |
+    <span> {{contribution.n_comments}} comments </span>
+  </mat-card-content>
+</mat-card>

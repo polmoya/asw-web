@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {MatCardModule, MatInputModule, MatList, MatListItem, MatListModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     HttpClientModule,
   ],
   exports: [
+    RouterModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
