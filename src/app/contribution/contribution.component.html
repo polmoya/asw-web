@@ -11,8 +11,9 @@
     <span> {{contribution.text}} </span>
     <span> {{contribution.n_votes}} votes </span>
     by
-    <span> {{contribution.user}} </span>
-    |
+    <a routerLink="/user/{{contribution.user}}">
+      <span> {{contribution.user}} </span>
+    </a>    |
     <span> {{contribution.time}} </span>
     |
     <span> {{contribution.n_comments}} comments </span>
