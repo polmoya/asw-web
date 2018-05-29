@@ -1,6 +1,7 @@
-<mat-card *ngIf="user" class="example-card">
+<mat-card *ngIf="user" class="example-card" [fxFlex.gt-xs]="80" [fxFlexOffset.gt-xs]="10" [fxFlex.lt-sm]="80"
+          [fxFlexOffset.lt-sm]="10">
   <mat-card-header>
-    <mat-card-title>{{user.email}}</mat-card-title>
+    <mat-card-title><h2>{{user.email}}</h2></mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p>
