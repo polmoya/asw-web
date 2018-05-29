@@ -1,0 +1,21 @@
+<mat-list>
+  <mat-list-item *ngFor="let contribution of contributions">
+    <div matLine>
+      <i class="material-icons">thumb_up_alt</i>
+        <h2> {{contribution.title}} </h2>
+    </div>
+    <span matLine> {{contribution.url}} </span>
+    <span matLine> {{contribution.text}} </span>
+    <div matLine>
+      <span> {{contribution.n_votes}} votes </span>
+      by
+      <span> {{contribution.user}} </span>
+      |
+      <span> {{contribution.time}} </span>
+      |
+      <span> {{contribution.n_comments}} comments </span>
+    </div>
+
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

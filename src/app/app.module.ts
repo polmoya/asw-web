@@ -6,9 +6,10 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import {NavbarModule} from './navbar/navbar.module';
 import {SubmitModule} from './submit/submit.module';
-import {ContributionsModule} from './contributions/contributions.module';
+import {ContributionsListModule} from './contributions_list/contributions_list.module';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     NavbarModule,
     SubmitModule,
-    ContributionsModule,
+    ContributionsListModule,
     FormsModule
   ],
   providers: [],
