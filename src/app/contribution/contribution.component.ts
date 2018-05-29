@@ -15,4 +15,8 @@ export class ContributionComponent {
 
   constructor(private httpService: HttpService, private router: Router) {
   }
+
+  vote(): void {
+    this.httpService.post(`contributions/${this.contribution.id}/vote`, null);
+  }
 }

@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title>
-    <i class="material-icons">thumb_up_alt</i>
+    <mat-icon class="material-icons" (click)="vote()">thumb_up_alt</mat-icon>
     <a routerLink="/contribution/{{contribution.id}}">
       <span> {{contribution.title}} </span>
     </a>

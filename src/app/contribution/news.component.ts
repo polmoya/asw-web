@@ -22,7 +22,6 @@ export class ContributionsListComponent implements OnInit {
 
   async getNews(): Promise<any> {
     this.contributions = await this.httpService.get('news');
-    this.router.navigate(['']);
   }
 
 }
