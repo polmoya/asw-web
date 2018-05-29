@@ -19,4 +19,8 @@ export class ContributionComponent {
   vote(): void {
     this.httpService.post(`contributions/${this.contribution.id}/vote`, null);
   }
+
+  unvote(): void {
+    this.httpService.delete(`contributions/${this.contribution.id}/vote`);
+  }
 }
