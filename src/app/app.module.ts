@@ -8,6 +8,7 @@ import {NavbarModule} from './navbar/navbar.module';
 import {SubmitModule} from './submit/submit.module';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {ProfileModule} from './profile/profile.module';
 import {ContributionModule} from './contribution/contribution.module';
 
 
@@ -21,6 +22,8 @@ import {ContributionModule} from './contribution/contribution.module';
     CommonModule,
     NavbarModule,
     SubmitModule,
+    FormsModule,
+    ProfileModule,
     ContributionModule,
     FormsModule
   ],
