@@ -1,0 +1,6 @@
+<button *ngIf="isLogged" mat-raised-button color="primary" [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Show profile</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>
+<button *ngIf="!isLogged" mat-raised-button color="primary" (click)="login()">Login</button>

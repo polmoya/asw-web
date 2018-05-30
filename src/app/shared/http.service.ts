@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-const API_ENDPOINT = 'http://myhackernews.tk/api/';
+// const API_ENDPOINT = 'http://myhackernews.tk/api/';
+const API_ENDPOINT = 'http://localhost:5000/api/';
 
 @Injectable()
 export class HttpService {
