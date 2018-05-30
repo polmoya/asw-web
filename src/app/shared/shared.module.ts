@@ -2,27 +2,21 @@ import {NgModule} from '@angular/core';
 
 import {HttpService} from './http.service';
 import {HttpClientModule} from '@angular/common/http';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
-import {MatCardModule, MatInputModule, MatList, MatListItem, MatListModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule} from '@angular/router';
+import {MaterialModule} from "../material.module";
 
 @NgModule({
   declarations: [],
   imports: [
     HttpClientModule,
+    MaterialModule
   ],
   exports: [
     RouterModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    FormsModule,
-    MatCardModule,
-    FlexLayoutModule,
+    FormsModule
   ],
   providers: [HttpService]
 })
