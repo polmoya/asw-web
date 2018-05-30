@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./auth.service";
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -15,8 +15,8 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.isLogged$.subscribe(async isLogged => {
-      this.isLogged = isLogged
-    })
+      this.isLogged = isLogged;
+    });
   }
 
   login(): void {

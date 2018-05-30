@@ -8,7 +8,7 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {NgModule} from '@angular/core';
-import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({

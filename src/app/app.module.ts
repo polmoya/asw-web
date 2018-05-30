@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from "angular5-social-login";
+import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from 'angular5-social-login';
 
 import {AppComponent} from './app.component';
 import {appRoutes} from './routes';
@@ -11,12 +11,12 @@ import {NavbarModule} from './navbar/navbar.module';
 import {SubmitModule} from './submit/submit.module';
 import {ProfileModule} from './profile/profile.module';
 import {ContributionModule} from './contribution/contribution.module';
-import {AuthModule} from "./auth/auth.module";
+import {AuthModule} from './auth/auth.module';
 
 export function getAuthServiceConfigs() {
   return new AuthServiceConfig([{
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("443234130566-cba0cgt2np2alo9e3jhpb7au9hmeptoh.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider('443234130566-cba0cgt2np2alo9e3jhpb7au9hmeptoh.apps.googleusercontent.com')
   }]);
 }
 
