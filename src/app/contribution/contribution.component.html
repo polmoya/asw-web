@@ -15,7 +15,7 @@
     <a routerLink="/user/{{contribution.user}}">
       <span> {{contribution.user}} </span>
     </a>    |
-    <span> {{contribution.time}} </span>
+    <span> {{contribution.time | timeAgo }} </span>
     |
     <a routerLink="/contribution/{{contribution.id}}"> {{contribution.n_comments}} comments </a>
   </mat-card-content>

@@ -23,4 +23,5 @@ export class ContributionComponent {
   unvote(): void {
     this.httpService.delete(`contributions/${this.contribution.id}/vote`);
   }
+
 }
