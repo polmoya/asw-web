@@ -7,7 +7,7 @@ import {HttpService} from '../shared/http.service';
 @Component({
   selector: 'app-contribution',
   templateUrl: './contribution.component.html',
-  styleUrls: []
+  styleUrls: ['./contribution.component.css']
 })
 export class ContributionComponent {
 
