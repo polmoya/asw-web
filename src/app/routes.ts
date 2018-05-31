@@ -10,6 +10,7 @@ export const appRoutes: Routes = [
   {path: '', component: NewsListComponent, pathMatch: 'full'},
   {path: 'news', component: NewestListComponent},
   {path: 'asks', component: AsksListComponent},
-  {path: 'contribution/:id', component: SubmitComponent},
+  // TODO : Canviar SeeProfileComponent per detalls/comentar contribution
+  {path: 'contribution/:id', component: SeeProfileComponent},
   {path: 'user/:id', component: SeeProfileComponent},
 ];
