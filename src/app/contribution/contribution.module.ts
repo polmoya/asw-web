@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 import {ContributionComponent } from './contribution.component';
 import {MaterialModule} from '../material.module';
 import {SharedModule} from '../shared/shared.module';
-import {ContributionsListComponent} from './news.component';
+import {AsksListComponent} from './asks.component';
+import {NewsListComponent} from './news.component';
+import {NewestListComponent} from './newest.component';
 
 @NgModule({
-  declarations: [ContributionComponent, ContributionsListComponent],
+  declarations: [ContributionComponent, NewsListComponent, AsksListComponent, NewestListComponent],
   imports: [MaterialModule, SharedModule],
   exports: []
 })

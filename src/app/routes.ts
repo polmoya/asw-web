@@ -1,13 +1,15 @@
 import {Routes} from '@angular/router';
 import {SubmitComponent} from './submit/submit.component';
-import {ContributionsListComponent} from './contribution/news.component';
+import {NewsListComponent} from './contribution/news.component';
 import {SeeProfileComponent} from './profile/see-profile.component';
+import {AsksListComponent} from './contribution/asks.component';
+import {NewestListComponent} from './contribution/newest.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},
-  {path: '', component: ContributionsListComponent, pathMatch: 'full'},
-  {path: 'news', component: ContributionsListComponent},
-  {path: 'asks', component: ContributionsListComponent},
+  {path: '', component: NewsListComponent, pathMatch: 'full'},
+  {path: 'news', component: NewestListComponent},
+  {path: 'asks', component: AsksListComponent},
   {path: 'contribution/:id', component: SubmitComponent},
   {path: 'user/:id', component: SeeProfileComponent},
 ];

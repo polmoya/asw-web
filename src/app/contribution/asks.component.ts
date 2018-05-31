@@ -5,11 +5,11 @@ import {HttpService} from '../shared/http.service';
 
 
 @Component({
-  selector: 'app-news-list',
+  selector: 'app-asks-list',
   templateUrl: './contributions_list.component.html',
   styleUrls: ['./contributions_list.component.css']
 })
-export class NewsListComponent implements OnInit {
+export class AsksListComponent implements OnInit {
 
   contributions: Contribution[];
 
@@ -17,11 +17,11 @@ export class NewsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNews();
+    this.getAsks();
   }
 
-  async getNews(): Promise<any> {
-    this.contributions = await this.httpService.get('news');
+  async getAsks(): Promise<any> {
+    this.contributions = await this.httpService.get('asks');
   }
 
 }
