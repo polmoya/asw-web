@@ -1,10 +1,14 @@
 <mat-card>
   <mat-card-title>
-    <mat-icon class="material-icons" (click)="vote()">thumb_up_alt</mat-icon>
-    <mat-icon class="material-icons" (click)="unvote()">thumb_down_alt</mat-icon>
-    <a routerLink="/contribution/{{contribution.id}}">
-      <span class="contribution" > {{contribution.title}} </span>
-    </a>
+    <span class="contribution">
+      <span class="icons">
+        <mat-icon class="material-icons" (click)="vote()">thumb_up_alt</mat-icon>
+        <mat-icon class="material-icons" (click)="unvote()">thumb_down_alt</mat-icon>
+        </span>
+      <a routerLink="/contribution/{{contribution.id}}">
+        {{contribution.title}}
+      </a>
+    </span>
   </mat-card-title>
   <mat-card-content>
     <a href="{{contribution.url}}"> {{contribution.url}} </a>
@@ -13,7 +17,7 @@
     by
     <a routerLink="/user/{{contribution.user}}">
       <span> {{contribution.user}} </span>
-    </a>    |
+    </a> |
     <span> {{contribution.time | timeAgo }} </span>
     |
     <a routerLink="/contribution/{{contribution.id}}"> {{contribution.n_comments}} comments </a>
