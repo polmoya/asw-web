@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Contribution} from '../shared/contribution.model';
 import {Router} from '@angular/router';
 import {HttpService} from '../shared/http.service';
+import {User} from '../shared/user.model';
 
 
 @Component({
@@ -21,24 +22,19 @@ export class ContributionComponent implements OnInit {
 
   ngOnInit() {
     this.show_url = !this.contribution.text;
-    this.show_vote = this.isVoted();
+    this.show_vote = this.isNotVoted();
     this.logged = this.canVote();
   }
 
-  isVoted(): boolean {
+  isNotVoted(): boolean {
     const votes = this.contribution.contribution_votes;
-    // TODO: esperar a que funcioni el login
-    // const isVoted = !(votes.includes(authenticatedUser));
-    const isVoted = false;
-    return isVoted;
+    const currentUser = this.getCurrentUser().email;
+    return !votes.includes(currentUser);
   }
 
   canVote(): boolean {
-    const votes = this.contribution.contribution_votes;
-    // TODO: esperar a que funcioni el login
-    // const canVote = !(this.contribution.user === authenticatedUser);
-    const canVote = true;
-    return canVote;
+    const currentUser = this.getCurrentUser().email;
+     return !(this.contribution.user === currentUser);
   }
 
 
@@ -49,5 +45,11 @@ export class ContributionComponent implements OnInit {
   unvote(): void {
     this.httpService.delete(`contributions/${this.contribution.id}/vote`);
   }
+
+  getCurrentUser(): User {
+    return JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+  // TODO: obrir link en una pestanya nova
 
 }

@@ -3,7 +3,7 @@
     <span class="contribution">
       <div *ngIf="logged" class="icons">
         <mat-icon *ngIf="show_vote" class="material-icons" style="color: #888" (click)="vote()">thumb_up_alt</mat-icon>
-        <mat-icon *ngIf="!show_vote" class="material-icons" (click)="unvote()">thumb_up_alt</mat-icon>
+        <mat-icon *ngIf="!show_vote" class="material-icons" style="color: white; background-color: #607D8B;"  (click)="unvote()">thumb_up_alt</mat-icon>
         </div>
       <a routerLink="/contribution/{{contribution.id}}">
         {{contribution.title}}
