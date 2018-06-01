@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Contribution} from '../shared/contribution.model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpService} from '../shared/http.service';
 
 
@@ -14,23 +14,19 @@ export class DetailsContributionComponent implements OnInit {
   contribution: Contribution;
   show_text: boolean;
 
-  constructor(private httpService: HttpService, private router: Router) {
-    this.contribution = { id: 1, title: 'Mr. Nice', url: '', text: 'teeeeeeeeeeeeeeeeeeeeeeeeeeeext', time: '', n_comments: 0,
-      n_votes: 0, kind: '', user: 'pepe',
-      contribution_votes: [] };
-  }
+  constructor(private httpService: HttpService, private route: ActivatedRoute) {  }
 
   ngOnInit() {
-    // TODO: Descomentar al arreglar crida
-    // this.getContribution();
+    this.getContribution();
+    // TODO: repassar
     this.show_text = !this.contribution.url;
 
   }
 
-  /* async getContribution(): Promise<any> {
-    // TODO: arreglar crida
-    this.contribution = await this.httpService.get('contributions/');
-  }*/
+  async getContribution(): Promise<any> {
+     const contrId: String = this.route.snapshot.params.id;
+    this.contribution = await this.httpService.get('contributions/' + contrId);
+  }
 
 
 }
