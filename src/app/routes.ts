@@ -4,6 +4,7 @@ import {NewsListComponent} from './contribution/news.component';
 import {SeeProfileComponent} from './profile/see-profile.component';
 import {AsksListComponent} from './contribution/asks.component';
 import {NewestListComponent} from './contribution/newest.component';
+import {MyProfileComponent} from './profile/my-profile.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},
@@ -12,5 +13,6 @@ export const appRoutes: Routes = [
   {path: 'asks', component: AsksListComponent},
   // TODO : Canviar SeeProfileComponent per detalls/comentar contribution
   {path: 'contribution/:id', component: SeeProfileComponent},
+  {path: 'user/myProfile', component: MyProfileComponent},
   {path: 'user/:id', component: SeeProfileComponent},
 ];
