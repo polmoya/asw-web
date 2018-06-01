@@ -13,13 +13,25 @@ export class ContributionComponent implements OnInit{
 
   @Input() contribution: Contribution;
   show_url: boolean;
+  show_vote: boolean;
 
   constructor(private httpService: HttpService, private router: Router) {
   }
 
   ngOnInit() {
-    this.show_url = (!this.contribution.text);
+    this.show_url = !this.contribution.text;
+    this.show_vote = this.isVoted();
   }
+
+  // TODO: repassar
+  isVoted(): boolean {
+    const votes = this.contribution.contribution_votes;
+    // TODO: esperar a que funcioni el login
+    //let hasVoted = votes.find(value => value === authenticatedUser);
+    const hasVoted = (!votes.find(value => value === this.contribution.user));
+    return hasVoted;
+  }
+
 
   vote(): void {
     this.httpService.post(`contributions/${this.contribution.id}/vote`, null);

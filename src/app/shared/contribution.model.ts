@@ -8,4 +8,5 @@ export class Contribution {
   n_comments: number;
   kind: string;
   user: string;
+  contribution_votes: string[];
 }
