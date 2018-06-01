@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Contribution} from '../shared/contribution.model';
 import {Router} from '@angular/router';
 import {HttpService} from '../shared/http.service';
@@ -9,11 +9,16 @@ import {HttpService} from '../shared/http.service';
   templateUrl: './contribution.component.html',
   styleUrls: ['./contribution.component.css']
 })
-export class ContributionComponent {
+export class ContributionComponent implements OnInit{
 
   @Input() contribution: Contribution;
+  show_url: boolean;
 
   constructor(private httpService: HttpService, private router: Router) {
+  }
+
+  ngOnInit() {
+    this.show_url = (!this.contribution.text);
   }
 
   vote(): void {

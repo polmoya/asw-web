@@ -9,17 +9,23 @@
         {{contribution.title}}
       </a>
     </span>
+    <div *ngIf="show_url">
+      <a class="url-link" href="{{contribution.url}}">
+        <mat-icon class="link-icon"> link</mat-icon>
+      </a>
+    </div>
   </mat-card-title>
   <mat-card-content>
-    <a href="{{contribution.url}}"> {{contribution.url}} </a>
     <br>
-    <span> {{contribution.n_votes}} votes </span>
-    by
-    <a routerLink="/user/{{contribution.user}}">
-      <span> {{contribution.user}} </span>
-    </a> |
-    <span> {{contribution.time | timeAgo }} </span>
-    |
-    <a routerLink="/contribution/{{contribution.id}}"> {{contribution.n_comments}} comments </a>
+    <div class="content">
+      <span> {{contribution.n_votes}} votes </span>
+      by
+      <a routerLink="/user/{{contribution.user}}">
+        <span> {{contribution.user}} </span>
+      </a> |
+      <span> {{contribution.time | timeAgo }} </span>
+      |
+      <a routerLink="/contribution/{{contribution.id}}"> {{contribution.n_comments}} comments </a>
+    </div>
   </mat-card-content>
 </mat-card>

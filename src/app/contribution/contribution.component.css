@@ -11,13 +11,11 @@ mat-card-title {
 }
 
 a {
-  color: #888;
   text-decoration: none;
-  position: relative;
-  display: block;
 }
 
-.contribution > a{
+.contribution > a {
+  color: #888;
   padding: 0px 4px;
   line-height: 32px;
 }
@@ -37,10 +35,9 @@ a {
   border-radius: 4px 0 0 4px;
 }
 
-.icons:hover{
+.icons:hover {
   background-color: #607D8B;
 }
-
 
 .icons > .mat-icon {
   padding: 4px;
@@ -53,24 +50,18 @@ a {
   color: white;
 }
 
-button {
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-  font-family: Arial;
+.link-icon {
+  color: black;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
 }
 
-button:hover {
-  background-color: #cfd8dc;
+.content > a {
+  color: black;
 }
 
-button.delete {
-  position: relative;
-  left: 194px;
-  top: -32px;
-  background-color: gray !important;
-  color: white;
+.content > a:hover {
+  color: #607D8B;
 }
