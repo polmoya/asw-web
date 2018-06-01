@@ -9,11 +9,12 @@ import {HttpService} from '../shared/http.service';
   templateUrl: './contribution.component.html',
   styleUrls: ['./contribution.component.css']
 })
-export class ContributionComponent implements OnInit{
+export class ContributionComponent implements OnInit {
 
   @Input() contribution: Contribution;
   show_url: boolean;
   show_vote: boolean;
+  logged: boolean;
 
   constructor(private httpService: HttpService, private router: Router) {
   }
@@ -21,15 +22,23 @@ export class ContributionComponent implements OnInit{
   ngOnInit() {
     this.show_url = !this.contribution.text;
     this.show_vote = this.isVoted();
+    this.logged = this.canVote();
   }
 
-  // TODO: repassar
   isVoted(): boolean {
     const votes = this.contribution.contribution_votes;
     // TODO: esperar a que funcioni el login
-    //let hasVoted = votes.find(value => value === authenticatedUser);
-    const hasVoted = (!votes.find(value => value === this.contribution.user));
-    return hasVoted;
+    // const isVoted = !(votes.includes(authenticatedUser));
+    const isVoted = false;
+    return isVoted;
+  }
+
+  canVote(): boolean {
+    const votes = this.contribution.contribution_votes;
+    // TODO: esperar a que funcioni el login
+    // const canVote = !(this.contribution.user === authenticatedUser);
+    const canVote = true;
+    return canVote;
   }
 
 
