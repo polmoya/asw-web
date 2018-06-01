@@ -1,0 +1,67 @@
+mat-card-title {
+  display: flex !important;
+}
+
+.contribution {
+  cursor: pointer;
+  display: flex;
+  background-color: #EEE;
+  border-radius: 4px;
+  height: 32px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contribution > a {
+  color: #888;
+  padding: 0px 4px;
+  line-height: 32px;
+}
+
+.contribution > a:hover {
+  color: #607D8B;
+  background-color: #DDD;
+}
+
+.icons {
+  display: flex;
+  font-size: small;
+  color: white;
+  background-color: #EEE;
+  height: inherit;
+  min-width: 16px;
+  border-radius: 4px 0 0 4px;
+}
+
+.icons:hover {
+  background-color: #607D8B;
+}
+
+.icons > .mat-icon {
+  padding: 4px;
+  color: #607D8B;
+}
+
+.icons > .mat-icon:hover {
+  cursor: pointer;
+  cursor: hand;
+  color: white;
+}
+
+.link-icon {
+  color: black;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
+}
+
+.content > a {
+  color: black;
+}
+
+.content > a:hover {
+  color: #607D8B;
+}

@@ -7,9 +7,11 @@ import {AsksListComponent} from './asks.component';
 import {NewsListComponent} from './news.component';
 import {NewestListComponent} from './newest.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {DetailsContributionComponent} from './details_contribution.component';
 
 @NgModule({
-  declarations: [ContributionComponent, NewsListComponent, AsksListComponent, NewestListComponent, TimeAgoPipe],
+  declarations: [ContributionComponent, NewsListComponent, AsksListComponent, NewestListComponent, TimeAgoPipe,
+                  DetailsContributionComponent],
   imports: [MaterialModule, SharedModule],
   exports: []
 })
