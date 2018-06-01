@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 
-.contribution > a{
+.contribution > a {
   color: #888;
   padding: 0px 4px;
   line-height: 32px;
@@ -35,7 +35,7 @@ a {
   border-radius: 4px 0 0 4px;
 }
 
-.icons:hover{
+.icons:hover {
   background-color: #607D8B;
 }
 

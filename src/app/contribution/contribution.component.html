@@ -9,9 +9,11 @@
         {{contribution.title}}
       </a>
     </span>
-    <a  class="url-link" href="{{contribution.url}}">
-      <mat-icon class = "link-icon"> link</mat-icon>
-    </a>
+    <div *ngIf="show_url">
+      <a class="url-link" href="{{contribution.url}}">
+        <mat-icon class="link-icon"> link</mat-icon>
+      </a>
+    </div>
   </mat-card-title>
   <mat-card-content>
     <br>
