@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../shared/user.model';
 import {HttpService} from '../shared/http.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../auth/auth.service';
 
 
 @Component({
@@ -13,12 +14,16 @@ export class SeeProfileComponent implements OnInit {
 
   user: User;
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
+              private httpService: HttpService, private authService: AuthService) {
   }
 
   async ngOnInit() {
-    const userId: String = this.route.snapshot.params.id;
-    this.user = await this.httpService.get('users/' + userId);
+    const email: String = this.activatedRoute.snapshot.params.id;
+    if (email === this.authService.getCurrentUser().email) {
+      this.router.navigate(['user/myProfile']);
+    }
+    this.user = await this.httpService.get('users/' + email);
   }
 
 }

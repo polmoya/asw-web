@@ -5,6 +5,7 @@ import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {Observable} from 'rxjs/internal/Observable';
 import {AuthService as SocialAuthService, GoogleLoginProvider} from 'angular5-social-login';
 import {HttpService} from '../shared/http.service';
+import {User} from '../shared/user.model';
 
 
 @Injectable()
@@ -39,6 +40,10 @@ export class AuthService implements CanActivate {
     return this.token;
   }
 
+  getCurrentUser(): User {
+    return JSON.parse(localStorage.getItem('currentUser'));
+  }
+
   logout() {
     localStorage.removeItem('currentUser');
     this.setToken(null);
@@ -53,6 +58,7 @@ export class AuthService implements CanActivate {
     const login = await this.httpService.post('users', user);
     this.setToken(login.token);
     localStorage.setItem('currentUser', JSON.stringify({
+      email: login.email,
       token: login.token
     }));
     this.announceIsLogged();
