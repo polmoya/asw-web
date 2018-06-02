@@ -1,6 +1,8 @@
-<app-contribution [contribution]="contribution"> </app-contribution>
-<mat-card>
-  <mat-card-content>
-    <span *ngIf="show_text">{{contribution.text}}</span>
-  </mat-card-content>
-</mat-card>
+<div>
+<app-contribution [contribution]="contribution"></app-contribution>
+  <mat-card>
+    <mat-card-content>
+      <span *ngIf="show_text">{{contribution.text}} </span>
+    </mat-card-content>
+  </mat-card>
+</div>

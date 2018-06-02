@@ -20,8 +20,6 @@ export class DetailsContributionComponent implements OnInit {
 
   ngOnInit() {
     this.getContribution();
-    this.show_text = this.isAsk();
-
   }
 
   isAsk(): boolean {
@@ -31,6 +29,7 @@ export class DetailsContributionComponent implements OnInit {
   async getContribution(): Promise<any> {
     const contrId: String = this.route.snapshot.params.id;
     this.contribution = await this.httpService.get('contributions/' + contrId);
+    this.show_text = await this.contribution.kind === 'ask';
   }
 
 

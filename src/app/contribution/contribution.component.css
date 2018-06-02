@@ -59,7 +59,7 @@ a {
 }
 
 .content > a {
-  color: black;
+  color: rgba(0,0,0,.54);
 }
 
 .content > a:hover {
