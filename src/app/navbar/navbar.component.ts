@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {User} from '../shared/user.model';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,4 +8,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  user: User;
+
+  constructor(private authService: AuthService) {
+    this.user = this.authService.getCurrentUser();
+  }
+
 }

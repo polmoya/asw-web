@@ -3,6 +3,7 @@ import {Contribution} from '../shared/contribution.model';
 import {Router} from '@angular/router';
 import {HttpService} from '../shared/http.service';
 import {User} from '../shared/user.model';
+import {AuthService} from '../auth/auth.service';
 
 
 @Component({
@@ -16,8 +17,10 @@ export class ContributionComponent implements OnInit {
   show_url: boolean;
   show_vote: boolean;
   logged: boolean;
+  logged_user: User;
 
-  constructor(private httpService: HttpService, private router: Router) {
+  constructor(private authService: AuthService, private httpService: HttpService, private router: Router) {
+    this.logged_user = this.authService.getCurrentUser();
   }
 
   ngOnInit() {
@@ -27,14 +30,18 @@ export class ContributionComponent implements OnInit {
   }
 
   isNotVoted(): boolean {
+    if (this.logged_user === null) {
+      return false;
+    }
     const votes = this.contribution.contribution_votes;
-    const currentUser = this.getCurrentUser().email;
-    return !votes.includes(currentUser);
+    return !votes.includes(this.logged_user.email);
   }
 
   canVote(): boolean {
-    const currentUser = this.getCurrentUser().email;
-     return !(this.contribution.user === currentUser);
+    if (this.logged_user === null) {
+      return false;
+    }
+    return !(this.contribution.user === this.logged_user.email);
   }
 
 
@@ -46,10 +53,6 @@ export class ContributionComponent implements OnInit {
     this.httpService.delete(`contributions/${this.contribution.id}/vote`);
   }
 
-  getCurrentUser(): User {
-    return JSON.parse(localStorage.getItem('currentUser'));
-  }
-
-  // TODO: obrir link en una pestanya nova
+  // TODO: obrir link en una pestanya nova refresh al votar
 
 }

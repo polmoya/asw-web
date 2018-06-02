@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../material.module';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [TimeAgoPipe],
@@ -15,6 +16,7 @@ import {TimeAgoPipe} from 'time-ago-pipe';
   ],
   exports: [
     RouterModule,
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     TimeAgoPipe

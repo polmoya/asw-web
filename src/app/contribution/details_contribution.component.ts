@@ -22,10 +22,6 @@ export class DetailsContributionComponent implements OnInit {
     this.getContribution();
   }
 
-  isAsk(): boolean {
-    return this.contribution.kind === 'ask';
-  }
-
   async getContribution(): Promise<any> {
     const contrId: String = this.route.snapshot.params.id;
     this.contribution = await this.httpService.get('contributions/' + contrId);

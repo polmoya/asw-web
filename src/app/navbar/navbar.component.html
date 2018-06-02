@@ -3,7 +3,7 @@
     <h1>Hacker News</h1>
   </a>
   <a href="/news">new</a>
-  <a href="/threads">threads</a>
+  <a *ngIf="user" href="/threads/{{user.email}}">threads</a>
   <a href="/asks">ask</a>
   <a href="/submit">submit</a>
 
