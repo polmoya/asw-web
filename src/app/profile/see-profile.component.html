@@ -7,6 +7,6 @@
     <p>
       {{user.about}}
     </p>
-    <a routerLink="/comments/{{user.email}}">Comments</a>
+    <button mat-raised-button color="accent" routerLink="/threads/{{user.email}}">Comments</button>
   </mat-card-content>
 </mat-card>
