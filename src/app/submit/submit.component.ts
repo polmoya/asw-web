@@ -21,6 +21,6 @@ export class SubmitComponent {
 
   async submit(): Promise<any> {
     await this.httpService.post(this.ask ? 'asks' : 'news', this.contribution);
-    this.router.navigate(['']);
+    this.router.navigate(['news']);
   }
 }
