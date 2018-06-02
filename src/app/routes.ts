@@ -6,6 +6,7 @@ import {AsksListComponent} from './contribution/asks.component';
 import {NewestListComponent} from './contribution/newest.component';
 import {DetailsContributionComponent} from './contribution/details_contribution.component';
 import {MyProfileComponent} from './profile/my-profile.component';
+import {ThreadsComponent} from './threads/threads.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},
@@ -15,4 +16,5 @@ export const appRoutes: Routes = [
   {path: 'contribution/:id', component: DetailsContributionComponent},
   {path: 'user/myProfile', component: MyProfileComponent},
   {path: 'user/:id', component: SeeProfileComponent},
+  {path: 'threads/:id', component: ThreadsComponent},
 ];

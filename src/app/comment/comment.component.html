@@ -1,0 +1,7 @@
+<mat-list *ngFor="let comment of comments">
+  <mat-list-item>
+    <span matLine>{{comment.text}}</span>
+    <span matLine>by {{comment.username}} {{comment.time | timeAgo}} on <a href="{{comment.contribution_id}}">{{comment.contribution_title}}</a></span>
+    <app-comment matLine [comments]="comment.children" *ngIf="comment.children"></app-comment>
+  </mat-list-item>
+</mat-list>

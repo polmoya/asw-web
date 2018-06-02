@@ -5,7 +5,7 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule, MatRadioModule,
-  MatToolbarModule
+  MatToolbarModule, MatTreeModule
 } from '@angular/material';
 import {NgModule} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -23,6 +23,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatInputModule,
     MatListModule,
     MatRadioModule,
+    MatTreeModule,
     FlexLayoutModule
   ],
 })

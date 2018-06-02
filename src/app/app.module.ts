@@ -12,6 +12,8 @@ import {SubmitModule} from './submit/submit.module';
 import {ProfileModule} from './profile/profile.module';
 import {ContributionModule} from './contribution/contribution.module';
 import {AuthModule} from './auth/auth.module';
+import {CommentModule} from './comment/comment.module';
+import {ThreadsModule} from './threads/threads.module';
 
 export function getAuthServiceConfigs() {
   return new AuthServiceConfig([{
@@ -35,7 +37,9 @@ export function getAuthServiceConfigs() {
     FormsModule,
     ProfileModule,
     ContributionModule,
-    AuthModule
+    AuthModule,
+    CommentModule,
+    ThreadsModule
   ],
   providers: [
     {

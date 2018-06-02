@@ -6,17 +6,18 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../material.module';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [TimeAgoPipe],
   imports: [
-    HttpClientModule,
-    MaterialModule
+    HttpClientModule
   ],
   exports: [
     RouterModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    TimeAgoPipe
   ],
   providers: [HttpService]
 })
