@@ -1,9 +1,9 @@
 <mat-card>
   <mat-card-title>
     <span class="contribution">
-      <div *ngIf="logged" class="icons">
-        <mat-icon *ngIf="show_vote" class="material-icons" style="color: #888" (click)="vote()">thumb_up_alt</mat-icon>
-        <mat-icon *ngIf="!show_vote" class="material-icons" style="color: white; background-color: #607D8B;"
+      <div *ngIf="!isMine()" class="icons">
+        <mat-icon *ngIf="showVote" class="material-icons" style="color: #888" (click)="vote()">thumb_up_alt</mat-icon>
+        <mat-icon *ngIf="!showVote" class="material-icons" style="color: white; background-color: #607D8B;"
                   (click)="unvote()">thumb_up_alt
         </mat-icon>
       </div>
@@ -16,6 +16,7 @@
         <mat-icon class="link-icon"> link</mat-icon>
       </a>
     </div>
+    <button *ngIf="isMine() && showDelete" mat-icon-button (click)="deleteContribution()"><mat-icon>delete</mat-icon></button>
   </mat-card-title>
   <mat-card-subtitle>
     <br>

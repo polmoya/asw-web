@@ -1,0 +1,7 @@
+<app-contribution *ngIf="contribution" [contribution]="contribution" [showDelete]="true"></app-contribution>
+<mat-card *ngIf="contribution && contribution.text">
+  <mat-card-content>
+    <span>{{contribution.text}} </span>
+  </mat-card-content>
+</mat-card>
+<app-comment *ngIf="contribution" [comments]="contribution.comments" [showOn]="false"></app-comment>

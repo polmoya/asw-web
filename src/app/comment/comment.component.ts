@@ -10,5 +10,6 @@ import {Comment} from './comment.model';
 export class CommentComponent {
 
   @Input() comments: Comment[];
+  @Input() showOn: boolean;
 
 }

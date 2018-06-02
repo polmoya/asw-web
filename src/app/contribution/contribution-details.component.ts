@@ -6,10 +6,10 @@ import {HttpService} from '../shared/http.service';
 
 @Component({
   selector: 'app-details-contribution',
-  templateUrl: './details_contribution.component.html',
-  styleUrls: ['./details_contribution.component.css']
+  templateUrl: './contribution-details.component.html',
+  styleUrls: ['./contribution-details.component.css']
 })
-export class DetailsContributionComponent implements OnInit {
+export class ContributionDetailsComponent implements OnInit {
 
   contribution: Contribution;
   show_text: boolean;

@@ -15,41 +15,43 @@ import {AuthService} from '../auth/auth.service';
 export class ContributionComponent implements OnInit {
 
   @Input() contribution: Contribution;
-  show_vote: boolean;
-  logged: boolean;
+  @Input() showDelete: boolean;
+  showVote: boolean;
   logged_user: User;
 
   constructor(private authService: AuthService, private httpService: HttpService, private router: Router) {
-    this.authService.isLogged$.subscribe(async isLogged => {
-      this.logged = isLogged;
+    this.authService.isLogged$.subscribe(async () => {
       this.logged_user = this.authService.getCurrentUser();
     });
   }
 
   ngOnInit() {
-    this.show_vote = this.isNotVoted();
-    this.logged = this.canVote();
+    this.showVote = this.isNotVoted();
   }
 
   isNotVoted(): boolean {
     return this.logged_user === null ? false : !this.contribution.contribution_votes.includes(this.logged_user.email);
   }
 
-  canVote(): boolean {
-    return this.logged_user === null ? false : !(this.contribution.user === this.logged_user.email);
+  isMine(): boolean {
+    return this.logged_user === null ? false : this.contribution.user === this.logged_user.email;
   }
 
 
   async vote() {
     await this.httpService.post(`contributions/${this.contribution.id}/vote`, null);
     this.contribution.n_votes += 1;
-    this.show_vote = false;
+    this.showVote = false;
   }
 
   async unvote() {
     await this.httpService.delete(`contributions/${this.contribution.id}/vote`);
     this.contribution.n_votes -= 1;
-    this.show_vote = true;
+    this.showVote = true;
   }
 
+  async deleteContribution() {
+    await this.httpService.delete(`contributions/${this.contribution.id}`);
+    this.router.navigate(['']);
+  }
 }

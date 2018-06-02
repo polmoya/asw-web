@@ -4,7 +4,7 @@
               [fxFlexOffset.lt-sm]="10">
       <mat-card-title>{{user.email}}</mat-card-title>
       <mat-form-field class="example-full-width">
-        <textarea matInput name="about" [(ngModel)]="user.about"></textarea>
+        <textarea matInput placeholder="About" name="about" [(ngModel)]="user.about"></textarea>
       </mat-form-field>
       <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
       <button mat-raised-button color="accent" routerLink="/threads/{{user.email}}">Comments</button>

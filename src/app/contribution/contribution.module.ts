@@ -6,12 +6,18 @@ import {SharedModule} from '../shared/shared.module';
 import {AsksListComponent} from './asks.component';
 import {NewsListComponent} from './news.component';
 import {NewestListComponent} from './newest.component';
-import {DetailsContributionComponent} from './details_contribution.component';
+import {ContributionDetailsComponent} from './contribution-details.component';
+import {CommentModule} from '../comment/comment.module';
 
 @NgModule({
-  declarations: [ContributionComponent, NewsListComponent, AsksListComponent, NewestListComponent,
-                  DetailsContributionComponent],
-  imports: [MaterialModule, SharedModule],
+  declarations: [
+    ContributionComponent,
+    NewsListComponent,
+    AsksListComponent,
+    NewestListComponent,
+    ContributionDetailsComponent
+  ],
+  imports: [MaterialModule, CommentModule, SharedModule],
   exports: []
 })
 export class ContributionModule {
