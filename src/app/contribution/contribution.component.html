@@ -11,8 +11,8 @@
         {{contribution.title}}
       </a>
     </span>
-    <div *ngIf="show_url">
-      <a class="url-link" href="{{contribution.url}}">
+    <div *ngIf="!contribution.text">
+      <a target="_blank" class="url-link" href="{{contribution.url}}">
         <mat-icon class="link-icon"> link</mat-icon>
       </a>
     </div>

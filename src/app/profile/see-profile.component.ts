@@ -20,7 +20,7 @@ export class SeeProfileComponent implements OnInit {
 
   async ngOnInit() {
     const email: String = this.activatedRoute.snapshot.params.id;
-    if (email === this.authService.getCurrentUser().email) {
+    if (this.authService.getCurrentUser() != null && email === this.authService.getCurrentUser().email) {
       this.router.navigate(['user/myProfile']);
     }
     this.user = await this.httpService.get('users/' + email);

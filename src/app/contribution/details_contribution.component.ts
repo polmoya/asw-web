@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contribution} from '../shared/contribution.model';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {HttpService} from '../shared/http.service';
-import {printError} from 'ts-node';
 
 
 @Component({
