@@ -64,4 +64,5 @@ a {
 
 .content > a:hover {
   color: #607D8B;
+  text-decoration: underline;
 }
