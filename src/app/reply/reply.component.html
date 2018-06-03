@@ -12,7 +12,7 @@
       <mat-form-field class="example-full-width">
         <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="doReply()">Reply</button>
+      <button mat-raised-button color="primary" (click)="doReply()" [disabled]="!reply.text">Reply</button>
     </mat-card>
   </div>
 </div>
