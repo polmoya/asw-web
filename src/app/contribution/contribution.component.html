@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-title>
     <span class="contribution">
-      <div *ngIf="!isMine()" class="icons">
+      <div *ngIf="loggedUser && !isMine()" class="icons">
         <mat-icon *ngIf="showVote" class="material-icons" style="color: #888" (click)="vote()">thumb_up_alt</mat-icon>
         <mat-icon *ngIf="!showVote" class="material-icons" style="color: white; background-color: #607D8B;"
                   (click)="unvote()">thumb_up_alt

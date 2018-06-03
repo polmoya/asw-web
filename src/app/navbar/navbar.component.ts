@@ -12,7 +12,9 @@ export class NavbarComponent {
   user: User;
 
   constructor(private authService: AuthService) {
-    this.user = this.authService.getCurrentUser();
+    this.authService.isLogged$.subscribe(async () => {
+      this.user = this.authService.getCurrentUser();
+    });
   }
 
 }

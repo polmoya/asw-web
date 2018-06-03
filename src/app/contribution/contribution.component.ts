@@ -17,11 +17,11 @@ export class ContributionComponent implements OnInit {
   @Input() contribution: Contribution;
   @Input() showDelete: boolean;
   showVote: boolean;
-  logged_user: User;
+  loggedUser: User;
 
   constructor(private authService: AuthService, private httpService: HttpService, private router: Router) {
     this.authService.isLogged$.subscribe(async () => {
-      this.logged_user = this.authService.getCurrentUser();
+      this.loggedUser = this.authService.getCurrentUser();
     });
   }
 
@@ -30,11 +30,11 @@ export class ContributionComponent implements OnInit {
   }
 
   isNotVoted(): boolean {
-    return this.logged_user === null ? false : !this.contribution.contribution_votes.includes(this.logged_user.email);
+    return this.loggedUser === null ? false : !this.contribution.contribution_votes.includes(this.loggedUser.email);
   }
 
   isMine(): boolean {
-    return this.logged_user === null ? false : this.contribution.user === this.logged_user.email;
+    return this.loggedUser === null ? false : this.contribution.user === this.loggedUser.email;
   }
 
 

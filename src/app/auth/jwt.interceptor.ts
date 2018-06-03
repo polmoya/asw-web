@@ -10,7 +10,7 @@ import {ErrorObservable} from 'rxjs-compat/observable/ErrorObservable';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
-  constructor(private authenticationService: AuthService,              private router: Router) {
+  constructor(private authenticationService: AuthService, private router: Router) {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
