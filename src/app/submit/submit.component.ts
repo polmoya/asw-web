@@ -20,7 +20,13 @@ export class SubmitComponent {
   }
 
   async submit(): Promise<any> {
-    await this.httpService.post(this.ask ? 'asks' : 'news', this.contribution);
-    this.router.navigate(['news']);
+    try {
+      await this.httpService.post(this.ask ? 'asks' : 'news', this.contribution);
+      this.router.navigate(['news']);
+    } catch (err) {
+      if (err.status === 409) {
+        this.router.navigate([`contribution/${err.error.id}`]);
+      }
+    }
   }
 }

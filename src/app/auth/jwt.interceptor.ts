@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {AuthService} from './auth.service';
@@ -30,7 +29,7 @@ export class JwtInterceptor implements HttpInterceptor {
           this.authenticationService.logout();
           this.router.navigate(['']);
         } else {
-          return ErrorObservable.create('error');
+          return ErrorObservable.create(err);
         }
       }
     });
