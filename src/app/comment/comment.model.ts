@@ -6,5 +6,6 @@ export class Comment {
   n_votes: number;
   contribution_id: number;
   time: string;
+  contribution_title: string;
   children: Comment[];
 }
