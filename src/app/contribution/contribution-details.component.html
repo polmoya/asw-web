@@ -4,7 +4,7 @@
     <span>{{contribution.text}} </span>
   </mat-card-content>
 </mat-card>
-<mat-card>
+<mat-card *ngIf="user">
   <mat-form-field class="example-full-width">
     <textarea matInput placeholder="Comment" [(ngModel)]="comment.text"> </textarea>
   </mat-form-field>
