@@ -5,8 +5,9 @@
       href="/contribution/{{comment.contribution_id}}">{{comment.contribution_title}}</a></span></mat-card-subtitle>
   <mat-card-subtitle>
     <a routerLink="/reply/{{comment.id}}">{{"reply"}}</a>
-    |
-    <span>vote</span>
+    <span *ngIf="!isMine(comment.id) && isNotVoted(comment.id)">
+      |
+      vote</span>
     <span *ngIf="isMine(comment.id)">
       |
       <a href="javascript:void(0)" (click)="deleteComment(comment.id)">delete</a>

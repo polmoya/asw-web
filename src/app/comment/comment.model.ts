@@ -8,4 +8,5 @@ export class Comment {
   time: string;
   contribution_title: string;
   children: Comment[];
+  votes: string[];
 }

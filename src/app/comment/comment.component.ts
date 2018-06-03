@@ -38,7 +38,7 @@ export class CommentComponent {
 
   isNotVoted(commentId: number): boolean {
     const comment = this.comments.find(c => c.id === commentId);
-    return this.loggedUser === null ? false : !comment.comment_votes.includes(this.loggedUser.email);
+    return this.loggedUser === null ? false : !comment.votes.includes(this.loggedUser.email);
   }
 
 }
