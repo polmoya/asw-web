@@ -1,13 +1,15 @@
 <div fxLayout="column">
   <div fxLayout="row">
-    <mat-card [fxFlex.gt-xs]="80" [fxFlexOffset.gt-xs]="10" [fxFlex.lt-sm]="80"
+    <mat-card *ngIf="comment" [fxFlex.gt-xs]="80" [fxFlexOffset.gt-xs]="10" [fxFlex.lt-sm]="80"
               [fxFlexOffset.lt-sm]="10">
-      <form class="reply-form">
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
-        </mat-form-field>
-        <button (click)="doReply()">Reply</button>
-      </form>
+      <mat-card-subtitle> by
+        <a routerLink="/user/{{comment.username}}">{{comment.username}}</a>
+        {{comment.time | timeAgo}}
+      </mat-card-subtitle>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="doReply()">Reply</button>
     </mat-card>
   </div>
 </div>

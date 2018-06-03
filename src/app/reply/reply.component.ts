@@ -11,18 +11,24 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 export class ReplyComponent implements OnInit {
   reply: Comment;
+  comment: Comment;
 
   constructor(private httpService: HttpService, private router: Router, private route: ActivatedRoute) {
     this.reply = new Comment();
   }
 
-  ngOnInit() {
+   ngOnInit() {
+    this.getComment();
+  }
+
+  private async getComment() {
+    const commentId: String = this.route.snapshot.params.id;
+    this.comment = await this.httpService.get('comments/' + commentId);
   }
 
   async doReply(): Promise<any> {
-    const parentId: String = this.route.snapshot.params.id;
-    await this.httpService.post('comments/' + parentId + '/replies', this.reply);
-    this.router.navigate(['']);
+    await this.httpService.post('comments/' + this.comment.id + '/replies', this.reply);
+    this.router.navigate(['contribution/' + this.comment.contribution_id]);
     this.reply = new Comment();
   }
 }
