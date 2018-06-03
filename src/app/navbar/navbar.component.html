@@ -5,7 +5,7 @@
   <a href="/news">new</a>
   <a *ngIf="user" href="/threads/{{user.email}}">threads</a>
   <a href="/asks">ask</a>
-  <a href="/submit">submit</a>
+  <a *ngIf="user" href="/submit">submit</a>
 
   <span class="fill-remaining-space"></span>
 
