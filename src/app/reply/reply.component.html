@@ -6,6 +6,9 @@
         <a routerLink="/user/{{comment.username}}">{{comment.username}}</a>
         {{comment.time | timeAgo}}
       </mat-card-subtitle>
+      <mat-card-content>
+        {{comment.text}}
+      </mat-card-content>
       <mat-form-field class="example-full-width">
         <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
       </mat-form-field>
