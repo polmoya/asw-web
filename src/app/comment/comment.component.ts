@@ -32,7 +32,13 @@ export class CommentComponent {
   }
 
   isMine(commentId: number): boolean {
-    const commentUsername = this.comments.find(comment => comment.id === commentId);
-    return this.loggedUser === null ? false : commentUsername.username === this.loggedUser.email;
+    const comment = this.comments.find(c => c.id === commentId);
+    return this.loggedUser === null ? false : comment.username === this.loggedUser.email;
   }
+
+  isNotVoted(commentId: number): boolean {
+    const comment = this.comments.find(c => c.id === commentId);
+    return this.loggedUser === null ? false : !comment.comment_votes.includes(this.loggedUser.email);
+  }
+
 }
