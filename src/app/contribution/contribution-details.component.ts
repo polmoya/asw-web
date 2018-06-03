@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Contribution} from '../shared/contribution.model';
+import {Contribution} from './contribution.model';
 import {ActivatedRoute} from '@angular/router';
 import {HttpService} from '../shared/http.service';
 
@@ -13,8 +13,10 @@ export class ContributionDetailsComponent implements OnInit {
 
   contribution: Contribution;
   show_text: boolean;
+  comment: Comment;
 
-  constructor(private httpService: HttpService, private route: ActivatedRoute) {
+  constructor(private httpService: HttpService, private router: ActivatedRoute) {
+    this.comment = new Comment();
   }
 
   ngOnInit() {
@@ -22,10 +24,15 @@ export class ContributionDetailsComponent implements OnInit {
   }
 
   async getContribution(): Promise<any> {
-    const contrId: String = this.route.snapshot.params.id;
+    const contrId: String = this.router.snapshot.params.id;
     this.contribution = await this.httpService.get('contributions/' + contrId);
     this.show_text = await this.contribution.kind === 'ask';
   }
 
+  async newComment(): Promise<any> {
+    const newComment = await this.httpService.post('contributions/' + this.contribution.id + '/comments', this.comment);
+    this.contribution.comments.unshift(newComment);
+    this.comment = new Comment();
+  }
 
 }

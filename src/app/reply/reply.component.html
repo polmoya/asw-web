@@ -10,7 +10,7 @@
           {{parent_comment.text}}
         </mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Introduce your reply" [(ngModel)]="reply.text" name="url">
+          <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
         </mat-form-field>
         <button (click)="doReply()">Reply</button>
       </form>

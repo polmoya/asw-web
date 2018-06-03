@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Contribution} from '../shared/contribution.model';
+import {Contribution} from '../contribution/contribution.model';
 import {HttpService} from '../shared/http.service';
 
 

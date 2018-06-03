@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Comment} from '../shared/comment.model';
+import {Comment} from '../comment/comment.model';
 import {HttpService} from '../shared/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Contribution} from '../shared/contribution.model';
+import {Contribution} from '../contribution/contribution.model';
 
 @Component({
   selector: 'app-reply',

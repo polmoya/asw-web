@@ -1,3 +1,5 @@
+import {Comment} from '../comment/comment.model';
+
 export class Contribution {
   id: number;
   title: string;
@@ -9,4 +11,5 @@ export class Contribution {
   kind: string;
   user: string;
   contribution_votes: string[];
+  comments: Comment[];
 }

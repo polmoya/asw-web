@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Contribution} from '../shared/contribution.model';
+import {Contribution} from './contribution.model';
 import {HttpService} from '../shared/http.service';
 import {User} from '../shared/user.model';
 import {AuthService} from '../auth/auth.service';

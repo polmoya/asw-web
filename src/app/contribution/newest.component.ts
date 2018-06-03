@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Contribution} from '../shared/contribution.model';
+import {Contribution} from './contribution.model';
 import {Router} from '@angular/router';
 import {HttpService} from '../shared/http.service';
 

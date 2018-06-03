@@ -4,4 +4,8 @@
     <span>{{contribution.text}} </span>
   </mat-card-content>
 </mat-card>
+    <mat-card>
+      <textarea matInput placeholder="Comment" [(ngModel)]="comment.text"> </textarea>
+      <button mat-raised-button color="primary" (click)="newComment()">Comment</button>
+    </mat-card>
 <app-comment *ngIf="contribution" [comments]="contribution.comments" [showOn]="false"></app-comment>
