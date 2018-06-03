@@ -4,13 +4,13 @@
               [fxFlexOffset.lt-sm]="10">
       <form class="reply-form">
         <mat-card-content>
-          by {{contribution.user}} (time) | on {{contribution.title}}
+          by {{contribution.user}} {{contribution.time}} | on: {{contribution.text}}
         </mat-card-content>
         <mat-card-content>
           {{parent_comment.text}}
         </mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Content" [(ngModel)]="reply.text" name="url">
+          <input matInput placeholder="Introduce your reply" [(ngModel)]="reply.text" name="url">
         </mat-form-field>
         <button (click)="doReply()">Reply</button>
       </form>

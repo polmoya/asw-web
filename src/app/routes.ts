@@ -11,7 +11,7 @@ import {ReplyComponent} from './reply/reply.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},
-  {path: 'reply', component: ReplyComponent},
+  {path: 'reply/:id', component: ReplyComponent},
   {path: '', component: NewsListComponent, pathMatch: 'full'},
   {path: 'news', component: NewestListComponent},
   {path: 'asks', component: AsksListComponent},
