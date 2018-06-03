@@ -1,13 +1,19 @@
 <mat-card *ngFor="let comment of comments">
   <p>{{comment.text}}</p>
-  <mat-card-subtitle>by <a routerLink="/user/{{comment.username}}">{{comment.username}}</a> {{comment.time | timeAgo}}
+  <mat-card-subtitle>{{comment.n_votes}} votes by <a routerLink="/user/{{comment.username}}">{{comment.username}}</a>
+    {{comment.time | timeAgo}}
     <span *ngIf="showOn">on <a
       href="/contribution/{{comment.contribution_id}}">{{comment.contribution_title}}</a></span></mat-card-subtitle>
   <mat-card-subtitle>
-    <a routerLink="/reply/{{comment.id}}">{{"reply"}}</a>
-    <span *ngIf="!isMine(comment.id) && isNotVoted(comment.id)">
+    <a routerLink="/reply/{{comment.id}}">reply</a>
+    <span *ngIf="!isMine(comment.id) && !isVoted(comment.id)">
       |
-      vote</span>
+      <a href="javascript:void(0)" (click)="voteComment(comment.id)">vote</a>
+    </span>
+    <span *ngIf="!isMine(comment.id) && isVoted(comment.id)">
+      |
+      <a href="javascript:void(0)" (click)="unvoteComment(comment.id)">unvote</a>
+    </span>
     <span *ngIf="isMine(comment.id)">
       |
       <a href="javascript:void(0)" (click)="deleteComment(comment.id)">delete</a>

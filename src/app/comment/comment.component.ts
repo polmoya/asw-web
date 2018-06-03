@@ -36,9 +36,25 @@ export class CommentComponent {
     return this.loggedUser === null ? false : comment.username === this.loggedUser.email;
   }
 
-  isNotVoted(commentId: number): boolean {
+  isVoted(commentId: number): boolean {
     const comment = this.comments.find(c => c.id === commentId);
-    return this.loggedUser === null ? false : !comment.votes.includes(this.loggedUser.email);
+    return !(this.loggedUser === null ? false : !comment.votes.includes(this.loggedUser.email));
   }
 
+  async voteComment(commentId: number) {
+    await this.httpService.post(`comments/${commentId}/vote`, null);
+    const comment = this.comments.find(c => c.id === commentId);
+    comment.n_votes += 1;
+    comment.votes.push(this.loggedUser.email);
+  }
+
+  async unvoteComment(commentId: number) {
+    await this.httpService.delete(`comments/${commentId}/vote`);
+    const comment = this.comments.find(c => c.id === commentId);
+    comment.n_votes -= 1;
+    const index = comment.votes.findIndex(user => user === this.loggedUser.email);
+    if (index > -1) {
+      comment.votes.splice(index, 1);
+    }
+  }
 }
