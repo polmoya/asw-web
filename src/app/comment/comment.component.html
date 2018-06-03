@@ -4,7 +4,7 @@
     {{comment.time | timeAgo}}
     <span *ngIf="showOn">on <a
       href="/contribution/{{comment.contribution_id}}">{{comment.contribution_title}}</a></span></mat-card-subtitle>
-  <mat-card-subtitle>
+  <mat-card-subtitle *ngIf="loggedUser">
     <a routerLink="/reply/{{comment.id}}">reply</a>
     <span *ngIf="!isMine(comment.id) && !isVoted(comment.id)">
       |
