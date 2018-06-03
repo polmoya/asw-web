@@ -1,13 +1,40 @@
-<mat-toolbar>
+<mat-toolbar color="accent">
   <a href="/">
     <h1>Hacker News</h1>
   </a>
-  <a href="/news">new</a>
-  <a *ngIf="user" href="/threads/{{user.email}}">threads</a>
-  <a href="/asks">ask</a>
-  <a *ngIf="user" href="/submit">submit</a>
-
+  <div fxShow="true" fxHide.lt-sm="true">
+    <a href="/news">new</a>
+    <a *ngIf="user" href="/threads/{{user.email}}">threads</a>
+    <a href="/asks">ask</a>
+    <a *ngIf="user" href="/submit">submit</a>
+  </div>
   <span class="fill-remaining-space"></span>
+  <app-auth fxShow="true" fxHide.lt-sm="true"></app-auth>
 
-  <app-auth></app-auth>
+  <div fxShow="true" fxHide.gt-xs="true">
+    <mat-icon style="color: black" [matMenuTriggerFor]="menu">menu</mat-icon>
+  </div>
 </mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <a href="/news">
+    <button mat-menu-item>
+      <span>new</span>
+    </button>
+  </a>
+  <a *ngIf="user" href="/threads/{{user.email}}">
+    <button mat-menu-item>
+      threads
+    </button>
+  </a>
+  <a href="/asks">
+    <button mat-menu-item>
+      <span>ask</span>
+    </button>
+  </a>
+  <a *ngIf="user" href="/submit">
+    <button mat-menu-item>
+      <span>submit</span>
+    </button>
+  </a>
+</mat-menu>

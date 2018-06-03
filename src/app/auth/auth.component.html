@@ -1,4 +1,4 @@
-<button *ngIf="isLogged" mat-raised-button color="primary" [matMenuTriggerFor]="menu">Menu</button>
+<button *ngIf="isLogged" mat-raised-button color="primary" [matMenuTriggerFor]="menu">{{user.email}}</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item routerLink="/user/myProfile">Show profile</button>
   <button mat-menu-item (click)="logout()">Logout</button>

@@ -4,8 +4,10 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatMenuModule, MatRadioModule,
-  MatToolbarModule, MatTreeModule
+  MatMenuModule,
+  MatRadioModule,
+  MatToolbarModule,
+  MatTreeModule
 } from '@angular/material';
 import {NgModule} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
