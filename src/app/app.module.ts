@@ -14,6 +14,7 @@ import {ContributionModule} from './contribution/contribution.module';
 import {AuthModule} from './auth/auth.module';
 import {CommentModule} from './comment/comment.module';
 import {ThreadsModule} from './threads/threads.module';
+import {ReplyModule} from './reply/reply.module';
 
 export function getAuthServiceConfigs() {
   return new AuthServiceConfig([{
@@ -39,7 +40,8 @@ export function getAuthServiceConfigs() {
     ContributionModule,
     AuthModule,
     CommentModule,
-    ThreadsModule
+    ThreadsModule,
+    ReplyModule
   ],
   providers: [
     {

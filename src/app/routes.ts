@@ -7,9 +7,11 @@ import {NewestListComponent} from './contribution/newest.component';
 import {ContributionDetailsComponent} from './contribution/contribution-details.component';
 import {MyProfileComponent} from './profile/my-profile.component';
 import {ThreadsComponent} from './threads/threads.component';
+import {ReplyComponent} from './reply/reply.component';
 
 export const appRoutes: Routes = [
   {path: 'submit', component: SubmitComponent},
+  {path: 'reply', component: ReplyComponent},
   {path: '', component: NewsListComponent, pathMatch: 'full'},
   {path: 'news', component: NewestListComponent},
   {path: 'asks', component: AsksListComponent},
