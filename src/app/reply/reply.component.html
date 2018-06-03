@@ -3,12 +3,6 @@
     <mat-card [fxFlex.gt-xs]="80" [fxFlexOffset.gt-xs]="10" [fxFlex.lt-sm]="80"
               [fxFlexOffset.lt-sm]="10">
       <form class="reply-form">
-        <mat-card-content>
-          by {{contribution.user}} {{contribution.time}} | on: {{contribution.text}}
-        </mat-card-content>
-        <mat-card-content>
-          {{parent_comment.text}}
-        </mat-card-content>
         <mat-form-field class="example-full-width">
           <textarea matInput placeholder="Reply" [(ngModel)]="reply.text" name="url"> </textarea>
         </mat-form-field>
