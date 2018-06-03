@@ -11,3 +11,7 @@
 .mat-radio-button + .mat-radio-button {
   padding-left: 16px;
 }
+
+.mat-radio-group + .mat-form-field {
+  padding-top: 10px;
+}
